@@ -6,6 +6,7 @@
 package com.utt.mensajes_app;
 
 import java.sql.Connection;
+import java.util.Scanner;
 
 /**
  *
@@ -14,11 +15,37 @@ import java.sql.Connection;
 public class Mensajes_app {
 
     public static void main(String[] args) {
-       Conexion conexion = new Conexion();
-       try(Connection cnx = conexion.get_connection()){
-       }catch(Exception e){
-                   System.out.println(e);
-                   }
+        
+        Scanner sc = new Scanner(System.in);
+        int opcion = 4;
+        do{
+            System.out.println("----------------------------------");
+            System.out.println(" Aplicación de mensajes ");
+            System.out.println("1 - Crear mensaje");
+            System.out.println("2 - Listar mensajes");
+            System.out.println("3 - Editar mensaje");
+            System.out.println("4 - Eliminar mensaje");
+            System.out.println("5 - Salir de la aplicación");
+            opcion = sc.nextInt();
+        }while (opcion != 5);
+        
+        switch ( opcion ){
+            case 1: 
+                MensajesService.crearMensaje();
+                break;
+            case 2: 
+                MensajesService.listarMensajes();
+                break;
+            case 3: 
+                MensajesService.borrarMensaje();
+                break;
+              case 4: 
+                  MensajesService.editarMensaje();
+                break;
+              default:
+                  break;
+        }
+      
        }
     }
 
