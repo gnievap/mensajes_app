@@ -27,25 +27,23 @@ public class Mensajes_app {
             System.out.println("4 - Eliminar mensaje");
             System.out.println("5 - Salir de la aplicación");
             opcion = sc.nextInt();
-        }while (opcion != 5);
-        
-        switch ( opcion ){
-            case 1: 
-                MensajesService.crearMensaje();
-                break;
-            case 2: 
-                MensajesService.listarMensajes();
-                break;
-            case 3: 
-                MensajesService.borrarMensaje();
-                break;
-              case 4: 
-                  MensajesService.editarMensaje();
-                break;
-              default:
-                  break;
-        }
-      
+            switch ( opcion ){
+                case 1: 
+                    MensajesService.crearMensaje();
+                    break;
+                case 2: 
+                    MensajesService.listarMensajes();
+                    break;
+                case 3: 
+                    MensajesService.borrarMensaje();
+                    break;
+                case 4: 
+                    MensajesService.editarMensaje();
+                    break;
+                default:
+                    break;
+            }
+          }while (opcion != 5);
        }
     }
 
